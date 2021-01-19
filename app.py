@@ -39,6 +39,10 @@ def score(hand):
 
 def game_over():
     """ checks to see if there is an instant game over (either player over or at 21) """
+    if sum(player_hand) == 21 and len(player_hand) == 2:
+        return 'player'
+    if sum(dealer_hand) == 21 and len(dealer_hand) == 2:
+        return 'player'
     if score(player_hand) > 21 or score(dealer_hand) == 21:
         return 'dealer'
     if score(dealer_hand) > 21 or score(player_hand) == 21:
